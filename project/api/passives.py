@@ -9,8 +9,7 @@ passives_app = Blueprint('passives_app', __name__)
 def list_passives():
     message = {"type": "", "message": ""}
     try:
-        user = request.args['user']
-        passives = passive_model.list_passives(user)  # Se llama al modelo para listar usuarios
+        passives = passive_model.list_passives()  # Se llama al modelo para listar usuarios
         return json.dumps(passives, default=str)
     except Exception as exception:
         print("======LIST_PASSIVES=====")
